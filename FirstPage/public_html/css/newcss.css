@@ -1,0 +1,15 @@
+.colorFondo{
+    color: #015698;
+}
+
+.backColor{
+    background-color:  #ffffff;
+}
+.floatL{
+    float: left;
+   
+}
+.floatR{
+    float: right;
+    margin-right: 20%;
+}

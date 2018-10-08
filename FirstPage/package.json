@@ -1,0 +1,8 @@
+{
+    "name": "FirstPage",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "Daw2",
+    "contributors": [],
+    "dependencies": {}
+}
