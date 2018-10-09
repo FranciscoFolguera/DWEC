@@ -93,7 +93,7 @@
  
  alert(a);
  */
-
+/*
  function Persona (txtNombre, nEdad){
  //Definición de propiedades
  this.nombre= txtNombre;
@@ -141,7 +141,7 @@
  document.write(alumno1.nota);
  
  
- 
+ */
  
  
  // var alumno= new Persona("Francisco Folguera", 20);   
@@ -253,10 +253,21 @@
  
  */
 
-var listaNum = new Array(17, 8, 4, 9, 12);
+
 //document.write(listaNum);
+/*
+var x = Math.floor((Math.random() * 20) + 1);
+var y = Math.floor((Math.random() * 20) + 1);
+var z = Math.floor((Math.random() * 20) + 1);
+var m = Math.floor((Math.random() * 20) + 1);
+var n = Math.floor((Math.random() * 20) + 1);
 
+var listaNum = new Array(x, y, z, m, n);
+document.writeln("Lista original: "+listaNum+"<br>");
 
+listaNum.sort();
+document.write(listaNum);
+/*
 for (var ind = 0; ind < listaNum.length; ind++) {
 
     for (var j = 0; j < listaNum.length; j++) {
@@ -272,3 +283,67 @@ for (var ind = 0; ind < listaNum.length; ind++) {
 
 
 }
+*/
+/*
+var cambio= false;
+do{
+    cambio= false;
+    for( var k=0; k<listaNum.length-1; k++){
+        
+        if(listaNum[k]>listaNum[k+1]){
+            var aux;
+            aux=listaNum[k];
+            listaNum[k]= listaNum[k+1];
+            listaNum[k+1]= aux;
+            cambio =true;
+        }else{
+            cambio= false;
+        }
+        document.write(listaNum+"<br>");
+    }
+    
+}while(cambio==true);
+*/
+
+var tabla= new Array();
+tabla[0]= new Array();
+tabla[1]= new Array();
+tabla[2]= new Array();
+
+
+var año;
+var mes;
+var nacimientos;
+var salir =false;
+do{
+    año= prompt("Introduce un año entre 2000 y 2018");
+    if(año<=2018 & año>=2000){
+        tabla[0]=(año);
+        salir= true;
+    }
+    
+}while(salir===false);
+
+do{
+    salir=false;
+    mes= prompt("Introduce un mes  nº");
+    if(mes<=12 & mes>=1){
+        tabla[1]=(mes);
+        salir= true;
+    }
+    
+}while(salir===false);
+
+do{
+    salir=false;
+    mes= prompt("Introduce un nº de naciminetos");
+    if(nacimientos>=0){
+        tabla[2]=(nacimientos);
+        salir= true;
+    }
+    
+}while(salir===false);
+
+document.write(tabla[0]);
+document.write(tabla[1]);
+document.write(tabla[2]);
