@@ -96,3 +96,21 @@ function repe(){
 
 
 */
+var miCadena="esto es una cadena tt";
+var str1= miCadena.toLocaleUpperCase();
+          document.write(str1+"<br>");
+          
+               var numpag = 10;
+          document.write (eval("numpag"));  // Visualiza el contenido de numpag: 10
+          var var1 = "numpag";
+        // Modo indirecto (sin comillas)
+          document.write (eval(var1));      // Visualiza el contenido de numpag: 10
+          //document.write (eval("20 + 4");  
+
+
+
+
+ var miCadena1 = "áéíóú aeiou &%'";
+          document.write (escape(miCadena1) + "<br>");  // Devuelve %E1%E9%ED%F3%FA%20aeiou%20%26%25%27
+          var miCadena2 = unescape(miCadena1);
+          document.write (miCadena1);  

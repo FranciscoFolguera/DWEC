@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <style type="text/css">
+            .verde {background-color: green;}
+        </style>
+        <!--  <script src="jquery-3.3.1.js" type="text/javascript"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Compruebo la carga de jquery y si no ha cargado muestro el archivo local -->
+        <script type="text/javascript">
+            var ruta = '\<script type="text/javascript" src="jquery-3.3.1.js"\>\<\/script\>';
+            window.jQuery || document.write(ruta);
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                $("#enlace").mouseover(
+                        function (evento) {
+                            $("#texto").addClass("verde");
+                        });
+                $("#enlace").mouseout(
+                        function (evento) {
+                            $("#texto").removeClass("verde");
+                        });
+            });
+        </script>
+
+        <script>
+            var variable;
+            $("#mielemento").css("text-align", "center");
+            alert(variable);
+            //$("#mielemento").css("display", "rigth");
+            //Con el método css() pueden alterarse varias propiedades a la vez utilizando la sintaxis:
+            //$("selector").css("propiedad1":"valor1"[, "propiedadn":"valorn"][...]);
+            if (variable === "undefined") {
+                $("#mielemento").css("text-align", "center");
+            }
+        </script>
+        <script>
+
+            $(document).ready(function () {
+                $("#pilallamadas").click(function (event) {
+                    event.preventDefault();
+                    $("#micapa").fadeOut(1000, function () {
+
+                        $("#micapa").css({top: 300, left: 200});
+
+                    });
+                    $("#micapa").fadeIn(1000, function () {
+                        $("#micapa").fadeOut(1000, function () {
+
+                            $("#micapa").css({top: 10, left: 500});
+                                                $("#micapa").fadeIn(1000);
+
+
+                        });
+                    });
+                });
+            });
+
+            function muestra() {
+
+            }
+
+
+        </script>
+
+    </head>
+    <body>
+        <div id="texto">
+            Este texto se encuentra dentro de una capa a la que se añadirá
+            una clase CSS cuando el ratón se encuentre sobre en enlace de debajo.
+            La misma clase se eliminará al sacar el ratón del enlace.
+        </div>
+
+        <br>
+        <a href="http://www.google.es" id="enlace">Al situar el ratón encima
+            de este enlace se añade una clase a la capa superior</a>
+        <div id="mielemento">
+            Contenido del elemento...
+        </div> 
+
+        <div id="micapa" style="background-color: #cc7700; color:fff; padding:10px; width: 300px; height: 130px; position: absolute; top: 10px; left: 500px;">
+            <ul>
+                <li>Voy a probar el callback</li>
+                <li>Para ejecutar unas funciones después de otras</li>
+                <li>Que me sirve, por ejemplo, para encadenar efectos</li>
+            </ul>
+        </div>
+        <a href="#" id="pilallamadas">Hacer varios cambios sin callback</a>
+
+</html>

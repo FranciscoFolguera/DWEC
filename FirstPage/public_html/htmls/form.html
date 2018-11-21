@@ -12,7 +12,7 @@ and open the template in the editor.
 
         <!--Import materialize.css-->
 
-        <script src="JS/Objetos/objImage.js" type="text/javascript"></script>
+        <script src="../JS/Objetos/objForm.js" type="text/javascript"></script>
     </head>
 
 
@@ -22,10 +22,18 @@ and open the template in the editor.
 
 
     <body> <!--onload='setInterval("cambiarTamaño()",70)'-->
-        <img src="imagenes/batman.png" id="imagen" alt="batman">
-       
-        <button onclick="batmanImage()">Cambiar Imagen a Batman</button>
-         <button onclick="jokerImage()">Cambiar Imagen a Joker</button>
-          <button onclick="cambiarTamaño()">Cambiar Tamaño</button>
+
+        <form action="/action_page.php">
+            First name:<br>
+            <input type="text" name="nombre" value="">
+            <br>
+            DNI:<br>
+            <input type="text" name="dni" value="">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form> 
+        <img src="../imagenes/batman.png" id="imagen" alt="batman">
+
+
     </body>
 </html>
