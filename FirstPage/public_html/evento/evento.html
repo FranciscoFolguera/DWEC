@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">  
+    <head>   
+        <title>parrafos</title>   <!-- titulo de pestaña--> 
+        <meta charset="UTF-8"> <!-- codificacion de caracteres utilizada--> 
+        <meta name="title" content="Título de la WEB"> 
+        <meta name="description" content="Descripción de la WEB">   
+    </head>  
+    <body > 
+
+        <div id="abuelo" style="background-color: red;padding: 50px;">
+            abuelo
+            <div id="padre" style="background-color: green; padding: 50px;">
+                padre
+                <div id="hijo" style="background-color: yellow;padding: 50px;">
+                    hijo
+                    <a id="google" href="https://www.google.com/">Google</a>
+                </div>
+                fin padre
+            </div>
+            fin abuelo
+        </div>
+
+
+        <button type="button" onclick="createCookie()">Crear cookie</button>
+        <button type="button" onclick="getCookie()">Get cookie</button>
+        <script>
+            function createCookie()
+            {
+                var cookieName = prompt("nombre la cookie:");
+                var cookieValue = prompt("valor de la cookie:");
+                var daysToExpire = prompt("segundos de la cookie:");
+                var date = new Date();
+                date.setTime(date.getTime() + (daysToExpire * 1000));
+                document.cookie = cookieName + "=" + cookieValue + "; expires=" + date.toGMTString();
+            }
+            function getCookie() {
+                var cname = prompt("introduce la cookie");
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                var valor = "";
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) === ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) === 0) {
+                        valor = c.substring(name.length, c.length);
+                        alert(valor);
+                    } else {
+                        alert('No exsiste esa cookie');
+
+                    }
+                }
+                return "";
+            }
+            function gCookie() {
+                var val = getCookie();
+                alert(val);
+                alert(document.cookie);
+            }
+
+
+
+
+        </script>
+        <script>
+            //escuchador de eventos
+            document.addEventListener("readystatechange", cargarEventos, false);
+            function cargarEventos() {
+               
+                if (document.readyState === "complete") {
+                    document.getElementById("abuelo").addEventListener("click", fondo, true);
+                    document.getElementById("padre").addEventListener("click", fondo, true);
+                    document.getElementById("hijo").addEventListener("click", fondo, true);
+                    document.getElementById("google").addEventListener("click", google, true);
+
+                }
+
+            }
+            function abuelo(evento) {
+                alert("abuelo");
+                document.getElementById("abuelo").style.color = "white";
+            }
+            function padre(evento) {
+                alert("padre");
+                evento.stopPropagation();
+                for (const prop in evento) {
+                    document.write(prop + " - " + evento[prop] + "<br>");
+                }
+            }
+            function hijo(evento) {
+                alert("hijo");
+            }
+            function google(evento) {
+                alert("google");
+                evento.preventDefault();
+            }
+
+            function fondo(evento) {
+
+
+                evento.target.style.backgroundColor = 'black';
+            }
+
+        </script>
+    </body>  
+
+</html>

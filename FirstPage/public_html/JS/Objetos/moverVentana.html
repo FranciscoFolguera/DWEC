@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+   <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+   <title>Ventana padre que abre la ventana hija</title>
+   <script type="text/javascript">
+	var ancho = 0;
+	var alto  = 0;
+	var hori  = 0;
+	var verti = 0;
+	var miVentana;
+	var repetir;
+	var sentido = 1;
+	var posicion = 0;
+
+	function abrir() {
+		ancho = parseInt(prompt("Ancho", 300));
+		alto  = parseInt(prompt("Alto", 150));
+		hori  = parseInt(prompt("Posición horizontal", 400));
+		verti = parseInt(prompt("Posición vertical", 200));
+		miVentana = window.open("mover2.html", "ventana", "top="+verti+", left="+hori+", width="+ancho+", height="+alto);
+//		miVentana.blur();
+	}
+	function mover() {
+		sentido = 1;
+		posicion = verti;
+		repetir = setInterval(mover2, 100);
+	}
+	function mover2() {
+		posicion += sentido;
+		miVentana.moveTo(hori, posicion);
+		miVentana.focus();
+		if (posicion == (verti + 20) || posicion == (verti - 20)) {
+			sentido = sentido * (-1);
+		}
+	}
+	function parar() {
+		clearInterval(repetir);
+	}
+	function cerrar() {
+		miVentana.close();
+	}
+
+   </script>
+ </head>
+ <body>
+  <p>Ventana padre</p>
+  Para crear la ventana hija pulse <a href="javascript:abrir()">aquí</a>.<br>
+  Para iniciar el movimiento de la ventana hija pulse <a href="javascript:mover()">aquí</a>.<br>
+  Para parar la ventana hija pulse <a href="javascript:parar()">aquí</a>.<br>
+  Para cerrar la ventana hija pulse <a href="javascript:cerrar()">aquí</a>.
+ </body>
+</html>

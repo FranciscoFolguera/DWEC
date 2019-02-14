@@ -58,6 +58,9 @@ do {
     }
 } while (validado === false);
 
+
+
+
 var resto = dni.substr(0, 8) % 23;
 document.write(cadenaNum[resto]+"<br>");
 document.write(resto+"<br>");

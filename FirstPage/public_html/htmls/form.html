@@ -23,17 +23,48 @@ and open the template in the editor.
 
     <body> <!--onload='setInterval("cambiarTamaño()",70)'-->
 
-        <form action="/action_page.php">
-            First name:<br>
+        <form action="/action_page.php" id="formUno">
+            Nombre:<br>
             <input type="text" name="nombre" value="">
             <br>
-            DNI:<br>
-            <input type="text" name="dni" value="">
+
             <br><br>
+            <div>
+                <div> Elige un coche weon </div>
+                <select name="cars" size="4">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <div>Sexo:</div>
+                <input type="radio" name="gender" value="male"> Male<br>
+                <input type="radio" name="gender" value="female" checked> Female<br>
+                <input type="radio" name="gender" value="other"> Other  
+            </div>
+            <br>
+            <div>
+                <div>Elige el deporte</div>
+                <input type="checkbox" name="regalos" value="1" id="balon" > 
+                <label for="balon"> Balón</label><br /> 
+                <input type="checkbox" name="regalos" value="2" id="pelota" > 
+                <label for="pelota"> Pelota</label><br /> 
+                <input type="checkbox" name="regalos" value="3" id="bici" > 
+                <label for="bici"> Bicicleta</label><br /> 
+                <input type="checkbox" name="regalos" value="4" id="raqueta" > 
+                <label for="raqueta"> Raqueta</label><br /> 
+            </div>
+            <br>
+            <div>
+                <div>Cuentame tu vida que me  interesa</div>
+                <textarea name="message" rows="10" cols="30">Oh fock
+                </textarea>
+            </div>
             <input type="submit" value="Submit">
         </form> 
-        <img src="../imagenes/batman.png" id="imagen" alt="batman">
-
 
     </body>
 </html>
